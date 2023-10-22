@@ -3,10 +3,10 @@ from django.http import HttpResponse
 import pandas as pd
 import pickle
 
-category_data = pd.read_csv('/code/idx2category.csv')
+category_data = pd.read_csv('idx2category.csv')
 idx2category = {row.k: row.v for idx, row in category_data.iterrows()}
 
-with open('/code/model.pkl', 'rb') as file:
+with open('model.pkl', 'rb') as file:
     model = pickle.load(file)
 
 
